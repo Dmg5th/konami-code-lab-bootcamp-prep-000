@@ -12,29 +12,22 @@ const codes = [
 ];
 
 function init() {
-  // your code here	  //
-  var index = 0
-  document.body.addEventListener('keydown', onKeyDownHandler);
+  // your code here	  // your code here
+  let idx = 0	
 
-  function onKeyDownHandler(e) {
-    const key = parseInt(e.detail || e.which)
-    console.log('key', key)
-    if (key === code[index]) {
-      index++
+  document.body.addEventListener("keydown", (e) => {	
+    const key = e.key	
 
-      if (index === code.length) {
-        alert("YOU DID IT!")
-        index = 0
-      }
-    } else {
-      index = 0
-    }
-  }
-}	}
+    idx = (codes[idx] === key) ? ++idx : 0	
 
 
+    if (idx === codes.length) {	
+      window.alert("Hurray!");	
+      idx = 0	
+    }	
 
-init();
+  });	
+}
 
 
 
